@@ -1,0 +1,54 @@
+server:
+  port: 56032
+
+eureka:
+  instance:
+   hostname: ${EUREKA_HOST:localhost}
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health, prometheus,metrics
+  endpoint:
+    # health:
+    #   show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    discovery:
+        locator:
+          enabled: true
+    gateway:
+      routes:
+        - id: config-service
+          uri: lb://config-service
+          predicates:
+            - Path=/v1/config/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/v1/user/**, /v1/validation/**
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/v1/mobile/**, /v1/callback/**
+        - id: campaign-service
+          uri: lb://campaign-service
+          predicates:
+            - Path=/v1/campaign/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods:
+            - GET
+            - POST      

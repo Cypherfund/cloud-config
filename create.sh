@@ -35,3 +35,7 @@ touch support-service-prod.properties
 touch user-service.properties
 touch user-service-stage.properties
 touch user-service-prod.properties
+
+touch zipkin.properties
+touch zipkin-stage.properties
+touch zipkin-prod.properties

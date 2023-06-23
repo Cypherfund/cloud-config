@@ -1,4 +1,46 @@
+
 spring:
+    application:
+        name: user-service
+    eureka:
+        client:
+            serviceUrl:
+                defaultZone: ${EUREKA_HOST_ZONE:http://localhost:56031/eureka/}
+            enabled: true
+    logging:
+        pattern:
+            level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+    management:
+        endpoint:
+            metrics:
+                enabled: true
+            prometheus:
+                enabled: true
+        endpoints:
+            web:
+                base-path: /actuator
+                exposure:
+                    include: health, metrics, prometheus, info
+        prometheus:
+            metrics:
+                export:
+                    enabled: true
+        tracing:
+            sampling:
+                probability: 1.0
+        zipkin:
+            tracing:
+                endpoint: ${ZIPKIN_URL:http://localhost:9411}/api/v2/spans
+    server:
+        port: ${PORT:0}
+        servlet:
+            context-path: /user-service
+        jpa:
+            database-platform: org.hibernate.dialect.MySQLDialect
+            show-sql: true
+            hibernate:
+                ddl-auto: none
+
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         password: rootadmin

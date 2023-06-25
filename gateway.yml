@@ -31,8 +31,8 @@ spring:
     name: gateway
   cloud:
     discovery:
-        locator:
-          enabled: true
+      locator:
+        enabled: true
     gateway:
       routes:
         - id: config-service
@@ -74,9 +74,9 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "*"
+            allowedOrigins: "localhost"
             allowedHeaders: "*"
             allowedMethods:
-            - GET
-            - POST
-            - PUT
+              - GET
+              - POST
+              - PUT

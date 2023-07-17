@@ -74,9 +74,18 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "localhost"
-            allowedHeaders: "*"
+            allowedOrigins:
+              - localhost
+              - http://localhost:3000
+              - https://a64c-154-72-150-202.ngrok-free.app
+              - http://localhost:4200
             allowedMethods:
               - GET
               - POST
+              - OPTIONS
               - PUT
+            allowedHeaders: "*"  
+            # allowedHeaders:
+            #   - Authorization
+            #   - Content-Type
+            allowCredentials: true

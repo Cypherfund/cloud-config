@@ -1,0 +1,91 @@
+server:
+  port: 56032
+
+eureka:
+  instance:
+    hostname: ${EUREKA_HOST:localhost}
+    prefer-ip-address=true: true
+    ip-address=${HOST:localhost}: ${EUREKA_HOST:localhost}
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_HOST_ZONE:http://localhost:56031/eureka/}
+management:
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL:http://localhost:9411}/api/v2/spans
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health, prometheus,metrics
+  endpoint:
+    # health:
+    #   show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    discovery:
+      locator:
+        enabled: true
+    gateway:
+      routes:
+        - id: configuration-service
+          uri: lb://configuration-service
+          predicates:
+            - Path=/configuration-service/**
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/account-service/**
+        - id: bbn-service
+          uri: lb://bbn-service
+          predicates:
+            - Path=/bbn-service/**
+        - id: lottery-service
+          uri: lb://lottery-service
+          predicates:
+            - Path=/lottery-service/**
+        - id: microtask-service
+          uri: lb://microtask-service
+          predicates:
+            - Path=/microtask-service/**
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/notification-service/**
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user-service/**
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/payment-service/**
+        - id: support-service
+          uri: lb://support-service
+          predicates:
+            - Path=/support-service/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - localhost
+              - http://localhost:3000
+              - https://a64c-154-72-150-202.ngrok-free.app
+              - http://localhost:4200
+            allowedMethods:
+              - GET
+              - POST
+              - OPTIONS
+              - PUT
+            allowedHeaders: "*"  
+            # allowedHeaders:
+            #   - Authorization
+            #   - Content-Type
+            allowCredentials: true

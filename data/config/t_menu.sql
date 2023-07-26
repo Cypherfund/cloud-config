@@ -1,0 +1,11 @@
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (1, 'API_bbn_configs_housemate', 'bbn_configs_housemate', 'file-earmark-text', 'dashboard', 'BBN', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (2, 'API_bbn_configs_housemate', 'bbn_configs_housemate', 'file-earmark-text', 'dashboard', 'BBN', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (3, 'API_bbn_configs_options', 'bbn_configs_event', 'file-earmark-text', 'dashboard', 'BBN', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (4, 'API_bbn_configs_event', 'bbn_configs_options', 'file-earmark-text', 'dashboard', 'BBN', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (5, 'API_bbn_contigories', 'bbn_contigories', 'file-earmark-text', 'dashboard', 'BBN', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (6, 'API_dashboard', 'API_dashboard', 'house-fill', 'dashboard', 'GENERAL', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (7, 'orders', 'API_orders', 'file-earmark', 'dashboard', 'GENERAL', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (8, 'predictions', 'API_predictions', 'cart', 'dashboard', 'GENERAL', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (9, 'customers', 'API_customers', 'people', 'dashboard', 'GENERAL', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (10, 'reports', 'API_reports', 'graph-up', 'dashboard', 'GENERAL', 1);
+INSERT INTO config.t_menu (id, str_name, str_key, str_icon, str_route, str_type, channel_id) VALUES (11, 'integration', 'API_integration', 'puzzle', 'dashboard', 'GENERAL', 1);

@@ -1,0 +1,1 @@
+INSERT INTO campaign.t_predictions (lg_prediction_id, b_active, db_odd, db_pot_win, db_stake, str_options, str_status, bbn_event, user_id, broken, formula) VALUES ('dfd85263-d65a-45fd-a161-5431cb5caffd', true, 0.5, 500, 200, '1', 'valid', null, '1', 0, 'NORMAL');

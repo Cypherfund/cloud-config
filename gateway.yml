@@ -77,8 +77,11 @@ spring:
             allowedOrigins:
               - localhost
               - http://localhost:3000
-              - https://a64c-154-72-150-202.ngrok-free.app
+              - https://*.ngrok-free.app
               - http://localhost:4200
+              - http://24.199.71.233
+              - http://165.232.155.234:3000
+              - http://165.232.155.234
             allowedMethods:
               - GET
               - POST

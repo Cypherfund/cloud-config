@@ -43,6 +43,15 @@ spring:
           uri: lb://account-service
           predicates:
             - Path=/account-service/**
+        # Normwal Websocket route
+        - id: websocket_route
+          uri: ws://localhost:64613/bbn-service/websocket
+          predicates:
+            - Path=/bbn-service/websocket/**
+        - id: websocket_route_secured
+          uri: wss://localhost:64613/bbn-service/websocket
+          predicates:
+            - Path=/bbn-service/websocket/**
         - id: bbn-service
           uri: lb://bbn-service
           predicates:
@@ -91,4 +100,4 @@ spring:
             # allowedHeaders:
             #   - Authorization
             #   - Content-Type
-            allowCredentials: true
+#            allowCredentials: true

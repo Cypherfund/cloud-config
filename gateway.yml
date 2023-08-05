@@ -100,4 +100,4 @@ spring:
             # allowedHeaders:
             #   - Authorization
             #   - Content-Type
-#            allowCredentials: true
+            allowCredentials: true

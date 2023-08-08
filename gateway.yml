@@ -64,6 +64,10 @@ spring:
           uri: lb://microtask-service
           predicates:
             - Path=/microtask-service/**
+        - id: subscription-service
+          uri: lb://subscription-service
+          predicates:
+            - Path=/subscription-service/**
         - id: notification-service
           uri: lb://notification-service
           predicates:

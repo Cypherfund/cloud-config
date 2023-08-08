@@ -91,6 +91,8 @@ spring:
               - http://24.199.71.233
               - http://165.232.155.234:3000
               - http://165.232.155.234
+              - https://cypherfund.me
+              - http://cypherfund.me
             allowedMethods:
               - GET
               - POST

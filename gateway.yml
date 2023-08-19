@@ -68,6 +68,10 @@ spring:
           uri: lb://subscription-service
           predicates:
             - Path=/subscription-service/**
+        - id: stories-service
+          uri: lb://stories-service
+          predicates:
+            - Path=/stories-service/**
         - id: notification-service
           uri: lb://notification-service
           predicates:

@@ -38,56 +38,56 @@ spring:
         - id: configuration-service
           uri: lb://configuration-service
           predicates:
-            - Path=/configuration-service/**
+            - Path=/config-api/**
         - id: account-service
           uri: lb://account-service
           predicates:
-            - Path=/account-service/**
+            - Path=/account-api/**
         # Normwal Websocket route
         - id: websocket_route
           uri: ws://localhost:64613/bbn-service/websocket
           predicates:
-            - Path=/bbn-service/websocket/**
+            - Path=/bbn-api/websocket/**
         - id: websocket_route_secured
           uri: wss://localhost:64613/bbn-service/websocket
           predicates:
-            - Path=/bbn-service/websocket/**
+            - Path=/bbn-api/websocket/**
         - id: bbn-service
           uri: lb://bbn-service
           predicates:
-            - Path=/bbn-service/**
+            - Path=/bbn-api/**
         - id: lottery-service
           uri: lb://lottery-service
           predicates:
-            - Path=/lottery-service/**
+            - Path=/lottery-api/**
         - id: microtask-service
           uri: lb://microtask-service
           predicates:
-            - Path=/microtask-service/**
+            - Path=/microtask-api/**
         - id: subscription-service
           uri: lb://subscription-service
           predicates:
-            - Path=/subscription-service/**
+            - Path=/subscription-api/**
         - id: stories-service
           uri: lb://stories-service
           predicates:
-            - Path=/stories-service/**
+            - Path=/stories-api/**
         - id: notification-service
           uri: lb://notification-service
           predicates:
-            - Path=/notification-service/**
+            - Path=/notif-api/**
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/user-service/**
+            - Path=/user-api/**
         - id: payment-service
           uri: lb://payment-service
           predicates:
-            - Path=/payment-service/**
+            - Path=/payment-api/**
         - id: support-service
           uri: lb://support-service
           predicates:
-            - Path=/support-service/**
+            - Path=/support-api/**
       globalcors:
         corsConfigurations:
           '[/**]':

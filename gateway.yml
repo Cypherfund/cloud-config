@@ -64,6 +64,10 @@ spring:
           uri: lb://microtask-service
           predicates:
             - Path=/microtask-api/**
+        - id: microtask-package-service
+          uri: lb://microtask-package-service
+          predicates:
+            - Path=/package-api/**
         - id: subscription-service
           uri: lb://subscription-service
           predicates:
@@ -106,6 +110,7 @@ spring:
               - POST
               - OPTIONS
               - PUT
+              - DELETE
             allowedHeaders: "*"  
             # allowedHeaders:
             #   - Authorization

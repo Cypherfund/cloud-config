@@ -88,6 +88,10 @@ spring:
           uri: http://blog-service:8080
           predicates:
             - Path=/blog-api/**
+        - id: info-service
+          uri: http://info-service:8080
+          predicates:
+            - Path=/info-api/**
         - id: payment-service
           uri: lb://payment-service
           predicates:

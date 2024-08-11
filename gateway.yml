@@ -53,7 +53,7 @@ spring:
           predicates:
             - Path=/bbn-api/websocket/**
         - id: bbn-service
-          uri: lb://bbn-service
+          uri: http://localhost:8089
           predicates:
             - Path=/bbn-api/**
         - id: lottery-service
@@ -81,17 +81,21 @@ spring:
           predicates:
             - Path=/notif-api/**
         - id: user-service
-          uri: lb://user-service
+          uri: http://localhost:62592
           predicates:
             - Path=/user-api/**
         - id: payment-service
-          uri: lb://payment-service
+          uri: http://localhost:8081
           predicates:
             - Path=/payment-api/**
         - id: support-service
           uri: lb://support-service
           predicates:
             - Path=/support-api/**
+        - id: bbn-service
+          uri: http://localhost:8089
+          predicates:
+            - Path=/bbn-api/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -103,6 +107,7 @@ spring:
               - http://24.199.71.233
               - http://165.232.155.234:3000
               - http://165.232.155.234
+              - http://172.20.10.6:4200
               - https://cypherfund.me
               - http://cypherfund.me
             allowedMethods:
